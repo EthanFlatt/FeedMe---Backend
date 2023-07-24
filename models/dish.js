@@ -7,5 +7,8 @@ const Dish = new Schema(
         instructions: {type: String, required: true},
         photo: {type: String, required: true},
         country: {type: String, required: true}
-    }
+    },
+    {timestamps: true}
 )
+
+module.exports = Dish
