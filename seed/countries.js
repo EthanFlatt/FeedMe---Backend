@@ -1,4 +1,4 @@
-const db = require('db')
+const db = require('../db')
 const { Continent, Country } = require('../models') 
 
 db.on('error', console.error.bind(console, 'MongoDB connection error'))
@@ -31,7 +31,7 @@ const main = async () => {
             continent: africa._id
         },
         {
-            mame: 'kenya',
+            name: 'kenya',
             continent: africa._id
         },
         {

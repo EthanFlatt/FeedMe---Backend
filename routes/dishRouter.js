@@ -1,10 +1,10 @@
 const Router = require('express').Router()
-const controller = require('../controllers/continentController')
+const controller = require('../controllers/dishController')
 
-Router.get('/', controller.getContinents)
-Router.get('/:id', controller.getContinentById)
-Router.post('/', controller.createContinent)
-Router.put('/:id', controller.updateContinent)
-Router.delete('/:id', controller.deleteContinent)
+Router.get('/', controller.getDishes)
+Router.get('/:id', controller.getDishById)
+Router.post('/', controller.createDish)
+Router.put('/:id', controller.updateDish)
+Router.delete('/:id', controller.deleteDish)
 
 module.exports = Router
