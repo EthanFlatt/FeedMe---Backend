@@ -5,125 +5,125 @@ db.on('error', console.error.bind(console, 'MongoDB connection error'))
 
 const main = async () => {
 
-    const africa = await Continent.findOne({name: 'Africa'})
-    const asia = await Continent.findOne({name: 'Asia'})
-    const europe = await Continent.findOne({name: 'Europe'})
-    const northAmerica = await Continent.findOne({name: 'North America'})
-    const southAmerica = await Continent.findOne({name: 'South America'})
-    const oceania = await Continent.findOne({name: 'Oceania'})
+    const africa = await Continent.findOne({name: 'africa'})
+    const asia = await Continent.findOne({name: 'asia'})
+    const europe = await Continent.findOne({name: 'europe'})
+    const northAmerica = await Continent.findOne({name: 'north america'})
+    const southAmerica = await Continent.findOne({name: 'south america'})
+    const oceania = await Continent.findOne({name: 'oceania'})
 
     const countries = [
 
         {
-            name: 'Nigeria',
+            name: 'nigeria',
             continent: africa._id
         },
         {
-            name: 'Morocco',
+            name: 'morocco',
             continent: africa._id
         },
         {
-            name: 'Egypt',
+            name: 'egypt',
             continent: africa._id
         },
         {
-            name: 'Ethiopia',
+            name: 'ethiopia',
             continent: africa._id
         },
         {
-            mame: 'Kenya',
+            mame: 'kenya',
             continent: africa._id
         },
         {
-            name: 'China',
+            name: 'china',
             continent: asia._id
         },
         {
-            name: 'Taiwan',
+            name: 'taiwan',
             continent: asia._id
         },
         {
-            name: 'Japan',
+            name: 'japan',
             continent: asia._id
         },
         {
-            name: 'South Korea',
+            name: 'south korea',
             continent: asia._id
         },
         {
-            name: 'Singapore',
+            name: 'singapore',
             continent: asia._id
         },
         {
-            name: 'Indonesia',
+            name: 'indonesia',
             continent: asia._id
         },
         {
-            name: 'India',
+            name: 'india',
             continent: asia._id
         },
         {
-            name: 'Iran',
+            name: 'iran',
             continent: asia._id
         },
         {
-            name: 'Greece',
+            name: 'greece',
             continent: europe._id
         },
         {
-            name: 'Italy',
+            name: 'italy',
             continent: europe._id
         },
         {
-            name: 'Spain',
+            name: 'spain',
             continent: europe.id
         },
         {
-            name: 'France',
+            name: 'france',
             continent: europe._id
         },
         {
-            name: 'United Kingdom',
+            name: 'united kingdom',
             continent: europe._id
         },
         {
-            name: 'United States',
+            name: 'united states',
             continent: northAmerica._id
         },
         {
-            name: 'Canada',
+            name: 'canada',
             continent: northAmerica._id
         },
         {
-            name: 'Mexico',
+            name: 'mexico',
             continent: northAmerica._id
         },
         {
-            name: 'Brazil',
+            name: 'brazil',
             continent: southAmerica._id
         },
         {
-            name: 'Argentina',
+            name: 'argentina',
             continent: southAmerica._id
         },
         {
-            name: 'Chile',
+            name: 'chile',
             continent: southAmerica._id
         },
         {
-            name: 'Peru',
+            name: 'peru',
             continent: southAmerica._id
         },
         {
-            name: 'Colombia',
+            name: 'colombia',
             continent: southAmerica._id
         },
         {
-            name: 'Australia',
+            name: 'australia',
             continent: oceania._id
         },
         {
-            name: 'New Zealand',
+            name: 'new zealand',
             continent: oceania._id
         }
 

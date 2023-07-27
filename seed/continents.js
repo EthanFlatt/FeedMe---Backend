@@ -8,22 +8,22 @@ const main = async () => {
     const continents = [
 
         {
-            name: 'Africa'
+            name: 'africa'
         },
         {
-            name: 'Asia'
+            name: 'asia'
         },
         {
-            name: 'Europe'
+            name: 'europe'
         },
         {
-            name: 'North America'
+            name: 'north america'
         },
         {
-            name: 'South America'
+            name: 'south america'
         },
         {
-            name: 'Oceania'
+            name: 'oceania'
         }
     ]
     await Continent.deleteMany()
