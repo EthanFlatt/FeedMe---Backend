@@ -45,7 +45,7 @@ const updateCountry = async (req, res) => {
     }
 }
 
-const deletecountry = async (req, res) => {
+const deleteCountry = async (req, res) => {
     try {
         const { id } = req.params
         const deleted = await Country.findByIdAndDelete(id)
@@ -63,5 +63,5 @@ module.exports = {
     getCountryById,
     createCountry,
     updateCountry,
-    deletecountry
+    deleteCountry
 }
