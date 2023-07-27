@@ -31,7 +31,7 @@ const main = async () => {
             continent: africa._id
         },
         {
-            mame: 'Uganda',
+            mame: 'Kenya',
             continent: africa._id
         },
         {
