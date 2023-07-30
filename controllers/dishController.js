@@ -1,13 +1,37 @@
-const { Dish } = require('../models/')
+const { Continent, Country, Dish } = require('../models/')
 
 const getDishes = async (req, res) => {
+    const search = req.query.search?.toLowerCase()
+    let dishes = []
+
     try {
-        const dishes = await Dish.find()
+        if (search) {
+            const continent = await Continent.findOne({name: search})
+            if (continent) { 
+                const countries = await Country.find({continent: continent._id})
+                const countryIds = countries.map(country => country._id)
+                dishes = await Dish.find({country: {$in: countryIds}})
+            } else { 
+                const country = await Country.findOne({name: search})
+                if (country) {
+                    dishes = await Dish.find({country: country._id})
+        
+                } else {
+                    const dish = await Dish.findOne({name: search}) 
+                    if (dish) {
+                        dishes = [dish]
+                    }
+                }
+            } 
+        } else {
+            dishes = await Dish.find({})
+        }
         return res.status(200).json({ dishes })
     } catch (error) {
-        return res.staus(500).send(error.message)
+        return res.status(500).send(error.message)
     }
 }
+
 
 const getDishById = async (req, res) => {
     try {
