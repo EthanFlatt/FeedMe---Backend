@@ -10,21 +10,21 @@ const getDishes = async (req, res) => {
             if (continent) { 
                 const countries = await Country.find({continent: continent._id})
                 const countryIds = countries.map(country => country._id)
-                dishes = await Dish.find({country: {$in: countryIds}})
+                dishes = await Dish.find({country: {$in: countryIds}}).populate('country')
             } else { 
                 const country = await Country.findOne({name: search})
                 if (country) {
-                    dishes = await Dish.find({country: country._id})
+                    dishes = await Dish.find({country: country._id}).populate('country')
         
                 } else {
-                    const dish = await Dish.findOne({name: search}) 
+                    const dish = await Dish.findOne({name: search}).populate('country')
                     if (dish) {
                         dishes = [dish]
                     }
                 }
             } 
         } else {
-            dishes = await Dish.find({})
+            dishes = await Dish.find({}).pop
         }
         return res.status(200).json({ dishes })
     } catch (error) {
@@ -36,13 +36,13 @@ const getDishes = async (req, res) => {
 const getDishById = async (req, res) => {
     try {
         const { id } = req.params
-        const dish = await Dish.findById(id)
+        const dish = await Dish.findById(id).populate('country')
         if (dish) {
             return res.status(200).json({ dish })
         }
         return res.status(404).send('Dish with the specified id does not exist')
     } catch (error) {
-        return res.staus(500).send(error.message)
+        return res.status(500).send(error.message)
     }
 }
 
