@@ -44,7 +44,7 @@ const main = async () => {
             country: nigeria._id
         },
         {
-            name: 'Moroccan couscous',
+            name: 'moroccan couscous',
             ingredients: ['onions', ' bell peppers', 'zucchini', 'beans', 'broth', 'ginger', 'cumin', 'cloves', 'cayenne', 'cardamom', 'coriander', 'allspice', 'olive oil', 'raisins', 'salt', 'orange', 'orange juice', 'couscous', 'mint'],
             instructions: 'Place a large, heavy bottomed pot over medium heat. Stir in the cumin, ginger, cloves, cayenne, cardamom, coriander, and allspice; gently toast until fragrant, about 2 to 3 minutes. Stir in oil and onion, cook until softened. Stir in the bell pepper, and zucchini; cook for 5 minutes. Stir in the raisins, salt, zest, and garbanzos. Place a large, heavy bottomed pot over medium heat. Stir in the cumin, ginger, cloves, cayenne, cardamom, coriander, and allspice; gently toast until fragrant, about 2 to 3 minutes. Stir in oil and onion, cook until softened. Stir in the bell pepper, and zucchini; cook for 5 minutes. Stir in the raisins, salt, zest, and garbanzos.',
             photo: 'https://www.allrecipes.com/thmb/8YHtPOL3wJechyrfRn089hb-ZI8=/282x188/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2):format(webp)/9249075-moroccan-couscous-Deb-Knisley-4x3-1-ea884bab1d6944739e751adedcb6a90d.jpg',
@@ -107,15 +107,15 @@ const main = async () => {
             country: singapore._id
         },
         {
-            name: 'Nasi Goreng',
+            name: 'nasi goreng',
             ingredients: ['eggs', 'vegetable oil', 'onions', 'leeks', 'bell peppers', 'garlic', 'chicken', 'shrimp', 'coriander', 'cumin', 'rice', 'soy sauce'],
             instructions: 'Heat a large nonstick skillet over medium heat. Coat with nonstick cooking spray. Pour eggs into the hot skillet and cook until the edges begin to set. Lift the edges to allow any uncooked egg to flow onto the hot pan, about 1 minute. Flip omelet in one piece and cook until fully set, about 30 seconds. Transfer omelet to a cutting board and slice into 1/2-inch strips. Set aside. Heat vegetable oil in a wok or large frying pan over high heat. Stir in onion, leek, chile peppers, and garlic. Cook and stir until onion is soft, 3 to 5 minutes. Stir in chicken, shrimp, coriander, and cumin; mix well. Cook and stir for about 5 minutes. Mix in cooked rice, sweet soy sauce, and omelet strips; cook until rice is heated through and chicken is no longer pink in the center, 3 to 5 minutes.',
             photo: 'https://www.allrecipes.com/thmb/TTPcYeb6OVJiZ97w4TBEmDhCyIo=/282x188/filters:no_upscale():max_bytes(150000):strip_icc():focal(479x0:481x2):format(webp)/2839070-1ad40e4543aa4139a6d3a15d8c0a82b1.jpg',
             country: indonesia._id
         },
         {
-            name: india,
-            ingredients: ['olive oil', 'onions', 'garlic', 'curry powder', 'cinnamon', 'paprika', 'ginger', 'sugar', 'salt', 'chicken', 'tomato', 'yogurt', 'coconut milk', 'cayenne', 'bay leaves', 'tomato paste', 'lemon'],
+            name: 'chicken curry',
+            ingredients: ['olive oil', 'onions', 'garlic', 'curry powder', 'cinnamon', 'paprika', 'ginger', 'sugar', 'salt', 'chicken', 'tomatoes', 'yogurt', 'coconut milk', 'cayenne', 'bay leaves', 'tomato paste', 'lemon'],
             instructions: 'Heat olive oil in a skillet over medium heat. Sauté onion until lightly browned. Stir in garlic, curry powder, cinnamon, paprika, bay leaf, ginger, sugar, and salt. Continue stirring for 2 minutes. Add chicken pieces, tomato paste, yogurt, and coconut milk. Bring to a boil, reduce heat, and simmer for 20 to 25 minutes. Remove bay leaf, and stir in lemon juice and cayenne pepper. Simmer 5 more minutes. Serve hot and enjoy!',
             photo: 'https://www.allrecipes.com/thmb/xKum1weEKo-HECoi1XgHRl_egLY=/282x188/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2):format(webp)/46822-indian-chicken-curry-ii-DDMFS-4x3-39160aaa95674ee395b9d4609e3b0988.jpg',
             country: india._id

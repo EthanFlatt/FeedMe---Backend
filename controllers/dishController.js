@@ -1,7 +1,9 @@
+const _ = require('lodash');
 const { Continent, Country, Dish } = require('../models/')
 
 const getDishes = async (req, res) => {
     const search = req.query.search?.toLowerCase()
+    const ingredients = req.query.ingredients?.toLowerCase()
     let dishes = []
 
     try {
@@ -23,8 +25,21 @@ const getDishes = async (req, res) => {
                     }
                 }
             } 
+        } else if (ingredients) {
+            const ingredientsArr = ingredients.split(',')
+            const unsortedDishes = await Dish.find({ingredients: {$in: ingredientsArr}})
+            const dishesByIngredientCount = _.groupBy(unsortedDishes, (dish) => {
+               return dish.ingredients.reduce((acc, ingredient) => {
+                    if (ingredientsArr.includes(ingredient)) {
+                        acc += 1
+                    } 
+                    return acc
+                }, 0)
+            })
+            const ingredientCounts = _.keys(dishesByIngredientCount).sort().reverse()
+            dishes = ingredientCounts.flatMap(ingredientCount => dishesByIngredientCount[ingredientCount])
         } else {
-            dishes = await Dish.find({}).pop
+            dishes = await Dish.find({}).populate('country') 
         }
         return res.status(200).json({ dishes })
     } catch (error) {
@@ -48,7 +63,11 @@ const getDishById = async (req, res) => {
 
 const createDish = async (req, res) => {
     try {
-        const dish = await new Dish(req.body)
+        const data = _.clone(req.body)
+        data.ingredients = data.ingredients?.toLowerCase().split(', ')
+        data.name = data.name?.toLowerCase()
+        data.country = (await Country.findOne({name: data.country?.toLowerCase()}))?._id
+        const dish = new Dish(data)
         await dish.save()
         return res.status(201).json({ dish })
     } catch (error) {
@@ -58,8 +77,12 @@ const createDish = async (req, res) => {
 
 const updateDish = async (req, res) => {
     try {
-        let { id } = req.params
-        let dish = await Dish.findByIdAndUpdate(id, req.body, { new: true})
+        const data = _.clone(req.body)
+        data.ingredients = data.ingredients?.toLowerCase().split(', ')
+        data.name = data.name?.toLowerCase()
+        data.country = (await Country.findOne({name: data.country?.toLowerCase()}))?._id
+        const { id } = req.params
+        const dish = await Dish.findByIdAndUpdate(id, data, { new: true})
         if (dish) {
             return res.status(200).json(dish)
         }
